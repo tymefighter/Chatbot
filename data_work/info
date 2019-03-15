@@ -1,0 +1,8 @@
+Important: -
+
+- The 'data_clear.py' clears the data of some of the characters like ',', '.', '?', ';', etc.
+- The 'data_clear.py' file produces the cleared text file.
+
+
+- The 'data_extract.py' file extracts distinct words into a list and indexes them using a dictionary called 'word2ind'.
+- It produces a pickle file in the data folder storing the list and word2ind, whole as a dictionary (more info given in the data folder).
