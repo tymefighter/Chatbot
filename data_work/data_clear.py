@@ -1,15 +1,15 @@
 def main():
 
-    fl = open('../data/corpus1', 'r')
+    fl = open('../data/sample', 'r')
     fl2 = open('../data/corpus1_clear', 'w')
 
     for line in fl.readlines():
         s = ""
         for c in line:
-            if c in ".,:;'?":
+            if c in ".,:;'?-!":
                 s += ' '
             else:
-                s += c
+                s += c.lower()
         fl2.write(s)
     
     fl.close()

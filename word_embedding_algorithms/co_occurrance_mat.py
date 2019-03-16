@@ -2,7 +2,7 @@ import pickle
 import numpy as np
 from sklearn.decomposition import TruncatedSVD
 
-def co_occ(fl_corpus, dist_words, word2ind, window_size = 4):
+def co_occurance(fl_corpus, dist_words, word2ind, window_size = 4):
     n = len(dist_words)
     M = np.zeros((n, n))
 
@@ -40,12 +40,13 @@ def main():
     word2ind = corpus_word_data['word2ind']
     fl.close()
 
-    M = co_occ(fl_corpus, dist_words, word2ind)
+    M = co_occurance(fl_corpus, dist_words, word2ind)
     M_reduced = reduce_dim(M, 50)
     fl_corpus.close()
 
+    co_occ = {'M' : M, 'M_reduced' : M_reduced}
     fl = open('../data/co_occ', 'ab')
-    pickle.dump(M_reduced, fl)
+    pickle.dump(co_occ, fl)
     fl.close()
 
     
